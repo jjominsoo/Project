@@ -1,0 +1,47 @@
+<이탈자 Churn 을 바탕으로 이탈자 분석>
+
+* 이탈자(통신사를 바꾸는 사람들)의 이유
+1. 서비스 품질 및 신호 강도		(PhoneService MultipleLines InternetService OnlineSecurity OnlineBackup DeviceProtection StreamingTV StreamingMovies )
+2. 가격 및 할인 혜택		(monthlycharges Contract)
+3. 계약기간 종료			(tenure Contract)
+4. 기술적혁신 및 업그레이드		
+5. 불만족				
+6. 기기업그레이드, 할부		(TechSupport)
+7. 지리적 이동			(Senior Dependents)
+
++PhoneService / InternetService 둘중 하나는 무조건 사용함
+
+1. PhoneSevice만 사용하는 고객 / InternetService만 사용하는 고객 / 둘다 사용하는 고객
+InternetService가 가장 많은 칼럼에 영향을 주므로 가장 영향력이 높다.
+InternetService도 일단 종류에 상관없이 있고 없고에 따른 상관관계 분석을 해보니
+
+onlinesecurity에 따른 onlinebackup / device protection (혹은 그 반대들)
+
+
+2. 가격의 범주를 나누고 해당 가격대가 보통 어떤 주기로 납부하는지 확인 >> 가격대 별로 Churn 분석
+ex) 저렴한 가격대는 보통 달별로 낸다 / 2년단위로 낸다
++연단위로 내는 사람이 이탈율이 적을 것이다. ( 적어도 2년은 쓴다는 가정하에 계약한 것이므로 밑에서 말할 senior비율도 높을 것이다)
+
+
+3. 사용개월수에 따른 이탈자
+핸드폰 사용주기랑 비슷하게 바꿈 >> 2년 이상 사용고객이 이탈한 이유를 찾는게 중요해보임
++ 만약 2년주긴데 다 못채우고 바꾼 사람들도 확인 필요할듯
++ 새로운 핸드폰 모델이 나왔다던가
+
+
+7. 노인 분들은 보통 이사하기를 꺼리므로 거주지 이동으로 인한 변경은 없을 것이라 가정하고
+오히려 자녀가 있는 사람은 이사를 상대적으로 많이 하므로 바꿀 가능성이 있을 것이다.
+!! 근데 자녀가 어려야 이사를 가는 통계가 높을텐데 해당 자료에선 자녀의 나이대를 알 수 없으므로 애매하다.
+
+
+근데 이게 시각화하기가 편한가?
+
+
+
+
+
+
+
+
+
+

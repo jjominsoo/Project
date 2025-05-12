@@ -1,0 +1,146 @@
+Retailer : Represents the business or individual that sells Adidas products directly to consumers.
+
+Retailer ID : A unique identifier assigned to each retailer in the dataset.
+
+Invoice Date : The date when a particular invoice or sales transaction took place.
+
+Region : Refers to a specific geographical area or district where the sales activity or retail operations occur.
+
+State : Represents a specific administrative division or territory within a country.
+
+City : Refers to an urban area or municipality where the sales activity or retail operations are conducted.
+
+Product : Represents the classification or grouping of Adidas products.
+
+Price per Unit : The cost or price associated with a single unit of a product.
+
+Units Sold : The quantity or number of units of a particular product sold during a specific sales transaction.
+
+Total Sales : The overall revenue generated from the sales transactions.
+
+Operating Profit : The profit earned by the retailer from its normal business operations.
+
+Sales Method : The approach or channel used by the retailer to sell its products or services.
+
+
+소매상
+소매상 ID
+발송날짜
+지역방위
+도시명(구)
+동명
+물건종류
+그 물건의 가치
+한번에 팔린 약
+총 판매금액
+이익
+판매방식
+
+1.각 Retailer에 대한 조사
+1-1. Amazon		: 미국 인터넷플랫폼, 최대규모 온라인 쇼핑몰, 소매시장 절반가량, 고객편의에 중심
+1-2. Foot Locker		: 미국 스포츠 의류 및 신발 소매업체
+1-3. Kohl's		: 백화점 소매체인
+1-4. Sports Direct		: 현 FrasersGroup, 영국의 소매,스포츠 및 지적재산그룹
+1-5. Walmart		: 미국 할인점, 전세계 매출,고용 규모부문 1위, 서비스업 경제 지표 영향, 회원제가 아닌 유통마진으로 주수입 > 코스트코처럼 싼 편은 아님
+1-6. Westgear		: ?? 
+
+
+
+
+
+매물은 얼마나 있는지 안나와 있다. >> 판매기록만 보고 결정
+유닛이 뭐야
+
+
+유닛당 가격 (소매상별_유닛당가격별_판매방식.png)
+대부분 			in < out < on
+westgear			out < in < on
++walmart 		in < out~=on
+
+유닛판매 수 (소매상별_유닛판매수별_판매방식.png)
+westgear는 		out < on < in 
+sportdirect, walmart는 	in < on < out
+나머지는 			in < out < on 순서로 팔렸다.
++sportdirect		in < on~=out
++kohls			in < out~=on
+
+소매상별_지역별_유닛판매수
+amazon 		: ne지역에서 가장 많이 나머지는 없거나 비슷함
+footlocker 	: s지역 빼고 전체적으로 엇비슷함 
+kohls		: w지역에서 가장 많이 나머진 없거나 비슷함
+sportdirect	: s지역에서 가장 많이 
+walmart		:
+westgear		: 
+
+소매상별_지역별_판매방법별_유닛당가격
+in 		: 
++se지역에 walmart가 혼자 있으니 가격을 맘대로 조절한듯하다 (모든 방법,가게 중 제일 비쌈)
+on		:
+out		:
+
+
+
+
+
+
+가격대는 
+amazon, footlocker	: af < sf < p
+>> 이 두 쇼핑몰이 더 많이 갖고 있는 데이터 값?
+나머지			: sf < af < p
+
+남녀가격차이는
+a	: 여성이 더 비쌈
+af, sf	: 남성이 더 비쌈
+
+amazon, footlocker	: a < af < sf
++특히 sf이 가격차이가 크다
+sportdirect		: af < sf < a
+walmart			: a < sf ~= af
+westgear			: sf ~= a < af 
+
+팔린 물건 갯수
+남성			: a < af < sf
+여성			: af < sf < a
+
+전체적으로 
+2020년 보다 21년에 더 많은 판매를 했다 .. 왜?
+amazon	: 홈쇼핑 - 일정한 상품 준비 (전반기로 균등)
+kohls	: 백화점 - 시즌별 상품 준비 (상반기에 상품이 집중)
+
+유닛판매수 (소매상별_지역별_판매방식별_유닛판매수)
+south는 online,outlet에서는 sportsdirect, walmart, westgear는 이용한다
+특히 outlet인경우 sportsdirect에서 사는것이 압도적으로 많다.
++inline이 westgear빼곤 없다
+
+west도 westgear와 kohl's가 양대산맥을 이룬다 거의
+특히 inline, outlet에서 westgear가 돋보이고 online은 kohl's,footlocker와 조금 많다.
+
+midwest는 유닛판매수는 판매 수가 아예 없거나, 있는 곳은 거의 엇비슷하다.
+inline에서 대부분 평균보다 좀 더 많이 팔렸고
+online에서 대충 평균이거나 평균보다 조금 낮게 팔리고
+outlet에서도 footlocker나 kohl's 만 평균치 sportdirect는 거의 판매가 없다
++아마존은 midwest지역에서는 온라인 판매만 함, walmart는 아예 1도 관여가 없음, westgear는 특이하게 outlet만 없음(inline은 준수하고, online은 반타작)
+
+northeast지역은 
+online 판매가 저조하고 outlet은 footlocker만 돋보적이고 amazon을 제외한 나머지는 online과 같은 추세다.
+inline은 평범하다 >> 대부분 inline에서 이득을 얻고 있음
++walmart는 큰 이득을 못보고 있다 이지역에서, 유일한 amazon inline매장 존재
+
+southeast지역은
+outlet 판매가 저조하고 online에서 fooktlocker와 sportdirect가 압도적으로 많으며, 그 절반값정도를 inline에서 판매하고 있다
++kohl's는 아예 1도 관여가 없음
+ 
+>> 지역마다 매장 수 확인하고 비교
+amazon, kohls, walmart는 대형마트기 때문에 다루는 품목이 적고
+footlocker, sportsdirect, westgear가 많다
+모든 지역이 in < out < on 순으로
+
+
+소매상별_유닛판매수별_이익 <> 소매상별_유닛판매부셜_판매방식
+> 어느 판매방식으로 파는게 제일 이익인가
+
+
+
+
+
+

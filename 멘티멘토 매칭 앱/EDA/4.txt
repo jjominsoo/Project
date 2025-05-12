@@ -1,0 +1,51 @@
+1. 있는 거 수정해서 일단 멘토가입/멘토목록 .. 멘티가입/멘티목록 .. 매칭조건/매칭결과 이런식으로 나누자
+멘티/멘토가입과 매칭조건은 결국 안드로이드 앱에서 json형식으로 데이터를 받아오면 그 데이터를 기반으로 돌아가도록 할 것이므로
+지금은 우리가 입력하는 식으로 진행한다.
+>> 관계성
+
+2. 다음에 json 형식 데이터를 어떻게 활용할지 보자. == 6번
+
+3. 이미지는 apex 형식이나 base64 인코딩형식으로 받아온다는데 아마 base64인코딩 형식이 좋아보인다
+
+4. 데이터베이스를 h2에서 mysql로 바꾸는게 좋아보인다.
+
+5. 멘티에 매칭을 하나만 연결해서............... ( 도메인 모델 확인 )
+
+6. 앱에서 받아야할 json 형식이
+멘티 = name(string) school(string) subject(string) grade(float) auth(bool) id(string) password(string) img(base64)
+멘토 = name(string) school(string) subject(string) grade(float) auth(bool) id(string) password(string) img1(base64) img2(base64)
+<멘티>
+school >> 가능하면 검색기능 있으면 좋겟다 .. api사용
+subject >> 마찬가지로 리스트들이 쫙잇고 그 중 고르는걸로다가..
+auth >> 핸드폰 본인인증만 해두자 .. api사용
+img  >> 뭐 base64로 인코딩해서 json에 같이 보내야한다는 듯함
+id, password >>현재 로그인기능이 구현되지 않앗어.. 구현해야할듯
+
+<멘토>
+멘티내용 ++
+img2 >> 성적증명서로 관리자페이지에 넘겨서 사실확인을 받으면 성적인증(bool)을 바꿔준다
+
+
++ 데이터베이스에 추가할 것들
+멘티 = 고유번호(int)
+멘토 = 고유번호(int) 상담횟수(int) 평점(int) 평점이유(list<string>) 성적인증(bool)
+
+7. 
+
+진행방식 member/new 에서 post형식으로 받아온다.
+
+main > json 읽는데 이걸 다른 html에서 받았을 때 json을 업데이트 하는식으로 하자 
+즉 
+사용자들이 json을 업데이트하고
+고유아이디를 기본으로 파싱하고 데이터 받아오는 거다.
+
+
+8. createMemberForm 에서 아이디 중복확인기능 추가해야함
+8.5 비밀번호는 모자이크해야함
+
+
+9. 각 파트마다 요구사항 적어보기
+
+
+*** 핸드폰 문자보내기
+https://velog.io/@hwarkhada/%EB%AC%B8%EC%9E%90%EB%A1%9C-%EC%9D%B8%EC%A6%9D%EB%B2%88%ED%98%B8-%EB%B3%B4%EB%82%B4%EA%B8%B0

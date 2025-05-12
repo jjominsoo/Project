@@ -1,0 +1,6 @@
+BE work file
+
+French characters with phonetic symbols are broken in MySQL, but there is no problem in the database itself, 
+and columns containing broken characters are not included in the recommended category within the service, so we do not modify them separately.
+
+Additionally, when outputting from programs other than MySQL, such a breaking phenomenon does not occur. (Except for Excel)

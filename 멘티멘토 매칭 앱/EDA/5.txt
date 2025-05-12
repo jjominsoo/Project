@@ -1,0 +1,29 @@
+ 이미지를 업로드 받으면 1. 이미지 파일(~.jpg) / 2. 이미지 경로(/static/img) 를 입력 받고
+
+이때 이미지파일이름이 중복될수 잇으니 일단 랜덤하게 만들어주고 (aaa.jpg , bbb.jpg ... )
+
+html로 보여주려면 <img th:src= 
+
+
+1. 즉 디비에는 1.이미지이름 2.이미지가짜이름 만 있으면 되는건가? + 3. 이미지 저장경로
+2. 이걸 gcp로 배포하면 되려나?
+3. 내장톰캣서버면 server.xml수정? >> 나중에 배포할때도 문제 아닌가 이건?
+
+지금 이미지가 로컬에 있어서 안불러와지는게 문제 >> 구글링 결과 xml 수정하는건데 이거 어차피 gcp로 바꿔버리면 의미 없는거 아닌가?
+내 컴퓨
+
+IE로 하면 된데 // 크롬이라 안된다는데 난 window10도 안됨 >> 옛날 게시글이긴 햇음
+
+server.xml
+<Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+	<Context docBase="kssfbiz" path="/" reloadable="true" source="org.eclipse.jst.jee.server:kssfbiz"/>
+	<Context docBase="D:/FileUpload/kssfbiz/" path="/kssfbiz/upload" reloadable="true" />
+</Host>
+
+@Crossorigin
+
+프록시 생성
+
+webconfig 에서 cors 설정
+
+header > contenttype
